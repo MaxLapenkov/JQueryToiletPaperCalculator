@@ -1,0 +1,120 @@
+@import 'normalize.scss';
+
+//variables
+$color-gray: #282828;
+$color-white: #fff;
+
+$font-size-md: 20px;
+$font-size-lg: 36px;
+$font-size-xl: 48px;
+//mixins
+
+@mixin roboto {
+	font-family:  'Roboto', sans-serif;
+}
+
+// Section common
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+body{
+	@include roboto;
+	background-color: $color-gray;
+	color: $color-white;
+}
+.section-outer {
+
+}
+.hidden{
+	display: none;
+}
+.section-inner {
+	max-width: 800px;
+	margin: 0 auto;
+	padding:  60px 20px;
+}
+h1 {
+	margin: 0;
+	margin-bottom: 50px;
+	padding: 0;
+	font-size:  $font-size-lg;
+
+}
+h2{
+	padding: 0;
+	margin: 0;
+	margin-top: 50px;
+	font-size: $font-size-md;
+	span{
+		font-size: $font-size-lg;
+	}
+}
+
+.form-group{
+	$parent: &;
+	& + & {
+		margin-top: 24px;
+	}
+	&--row{
+		display: flex;
+		#{$parent}__title{
+			margin-top: 18px;
+			margin-right: 12px;
+		}
+		& + & {
+			margin-top: 12px;
+		}
+	}
+	&__title{
+		font-size: $font-size-md;
+	}
+	&__control{
+		margin-top: 8px;
+	}
+	
+}
+.control{
+	display: flex;
+	&--col{
+		flex-direction: column;
+	}
+	&__button,
+	&__input{
+		@include roboto;
+		margin: 0;
+		background: none;
+		color: $color-white;
+	}
+	&__input{
+		
+		display: block;
+		width: 100%;
+		font-size: $font-size-lg;
+		
+		padding: 0;
+		
+		border-width:  0 0 1px;
+		border-style: solid;
+		border-bottom-color: $color-white;
+		
+	}
+	&__button{
+		cursor: pointer;
+		padding: 8px 20px;
+		border-radius: 4px;
+		font-size: $font-size-md;
+		border: 1px solid transparent;
+		transition: .2s;
+		&:hover,
+		&--active{
+			border-color: white;
+		}
+		& + & {
+			margin-left: 12px;
+		}
+	}
+}

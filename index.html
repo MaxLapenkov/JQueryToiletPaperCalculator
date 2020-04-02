@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>ToiletPaper</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<section class="section-outer">
+		<div class="section-inner">
+			<h1>Калькулятор туалетной бумаги</h1>
+
+			<div class="form-group">
+				<div class="form-group__title">Количество рулонов</div>
+				<div class="form-group__conrol control">
+					<input type="text" class="control__input" value="2" id="total-length">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group__title">Метод подсчета</div>
+				<div class="form-group__conrol control">
+					<button data-type="length" class="control__button control__button--active">по длине</button>
+					<button data-type="paper" class="control__button">по листочкам</button>
+				</div>
+			</div>
+			<div class="form-group hidden" id="paper-length-block">
+				<div class="form-group__title">Длина листочка, м (средняя длина - 14см)</div>
+				<div class="form-group__conrol control">
+					<input type="text" class="control__input" value="14" id="paper-length">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group__title">Сколько человек дома</div>
+				<div class="form-group__conrol control">
+					<input type="text" class="control__input" value="1" id="users-count">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group__title">Использовано в день</div>
+				<div class="form-group__conrol control control--col" id="users-list">
+
+				</div>
+			</div>
+			<h2>Хватит на <span id="result">10</span> дней</h2>
+		</div>
+	</section>
+
+</body>
+
+</html>
